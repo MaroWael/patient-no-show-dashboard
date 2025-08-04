@@ -105,12 +105,6 @@ Original Dataset: [Kaggle - No-Show Appointments](https://www.kaggle.com/dataset
 
 ---
 
-## 📄 License
-
-Licensed under the **MIT License** — use freely with attribution.
-
----
-
 ## 🙌 Credits
 
 - Dashboard: [Plotly Dash](https://dash.plotly.com/)
