@@ -1,71 +1,118 @@
-# 🩺 Patient No-Show Dashboard
+# Patient No-Show Analysis & Intervention Dashboard
 
-An interactive data dashboard built with Dash and Plotly for analyzing missed appointments in a healthcare setting. This tool helps identify patterns in patient no-shows based on age, delay between booking and appointment, and repeat offenders.
-
----
-
-## 📊 Features
-
-- **KPI Cards**  
-  Summarizes key metrics:
-  - Overall No-Show Rate
-  - Total Missed Appointments
-  - Repeat Offender Impact
-
-- **Bar Chart: No-Show by Age Group**  
-  Visualizes the percentage of missed appointments across different age segments.
-
-- **Line Chart: No-Show by Delay Days**  
-  Interactive plot that shows how delay between booking and appointment affects no-show behavior, with a range slider for custom analysis.
+A professional-grade interactive dashboard built using **Dash**, **Plotly**, and **Bootstrap**, designed for healthcare data analysts and decision-makers to monitor and reduce medical appointment no-shows through intelligent visualizations and actionable insights.
 
 ---
 
-## 🛠 Tech Stack
+## 🚀 Key Features
 
-- **Dash** – Interactive Python framework for building web dashboards  
-- **Plotly Express** – Declarative data visualization  
-- **Dash Bootstrap Components** – For modern UI layout  
-- **Pandas + NumPy** – Data processing and aggregation  
+- 📈 **Dynamic KPIs**: Real-time metrics for no-show rates, repeat offenders, and delay effects.
+- 📊 **Interactive Visuals**:
+  - Delay vs. No-Show Analysis
+  - Age Group Trends
+  - Neighbourhood Segmentation
+- 🧠 **Embedded Controls**:
+  - Dropdown in-bar chart with no UI overlap
+  - Top-N adjustable visual ranking
+- 🎯 **Targeted Demographics**: Easily identify high-risk groups (e.g., age 10–29 with long delays).
 
 ---
 
-## 📂 Project Structure
+## 🧱 Tech Stack
+
+- **Dash** (Plotly) for web interface
+- **Dash Bootstrap Components** for responsive layout
+- **Pandas / NumPy** for data handling
+- **Plotly Express** for modern, clean visualizations
+
+---
+
+## 🗂 Project Structure
 
 ```
-├── data.csv                 # Source dataset
-├── app.py                  # Main Dash application
-├── README.md               # Project overview
+project/
+│
+├── data/
+│   ├── KaggleV2-May-2016.csv    # Raw dataset
+│   ├── insights.ipynb           # assumptions
+│   └── app.ipynb                # Jupyter EDA
+│
+├── data.csv                    # Cleaned dataset used by dashboard
+├── app.py                      # Main dashboard application
+└── README.md 
 ```
 
 ---
 
-## 🚀 How to Run
+## ⚙️ Setup Instructions
 
-1. Install dependencies:
-   ```bash
-   pip install dash dash-bootstrap-components pandas numpy plotly
-   ```
+### 1. Clone the Repository
 
-2. Place your dataset as `data.csv` in the same directory.
+```bash
+git clone https://github.com/MaroWael/patient-no-show-dashboard noshow-dashboard
+cd noshow-dashboard
+```
 
-3. Run the app:
-   ```bash
-   python app.py
-   ```
+### 2. Environment Setup
 
-4. Open your browser and go to `http://127.0.0.1:8050`
+```bash
+python -m venv venv
+source venv/bin/activate     # Windows: venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+Or manually:
+
+```bash
+pip install dash dash-bootstrap-components pandas plotly numpy
+```
+
+### 3. Run the App
+
+```bash
+python app.py
+```
+
+Open your browser at `http://127.0.0.1:8050`
 
 ---
 
-## 📌 Next Steps
+## 📊 Dataset Overview
 
-- Add filters (gender, diagnosis, weekday)
-- Explore calendar heatmaps and hourly trends
-- Introduce predictive modeling for no-shows
+- **Patient Features**:
+  - Gender, Age, Neighbourhood, Diseases (Hypertension, Diabetes, etc.)
+- **Operational Features**:
+  - Appointment Date vs. Scheduled Date (→ Delay)
+  - No-show Indicator
+- **Engineered Features**:
+  - Delay_Days, AgeGroup, Risk Segment Flags
+
+Original Dataset: [Kaggle - No-Show Appointments](https://www.kaggle.com/datasets/joniarroba/noshowappointments)
 
 ---
 
-## 📁 Additional Files
+## 🧭 Dashboard Navigation
 
-- **data/**  
-  Contains the dataset (`data.csv`) and exploratory data analysis (EDA) notebooks or scripts used to understand and clean the data before dashboard development.
+- **Filters**: Gender, Age Range, Disease toggles
+- **Visuals**: Delay effects, Age groups, Neighbourhoods
+- **Insights**: High-risk cohort flags, customizable charts
+
+---
+
+## 📸 Screenshot
+
+![Dashboard Preview](image.png)
+
+---
+
+## 📄 License
+
+Licensed under the **MIT License** — use freely with attribution.
+
+---
+
+## 🙌 Credits
+
+- Dashboard: [Plotly Dash](https://dash.plotly.com/)
+- Styling: [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/)
+- Data Source: [Kaggle](https://www.kaggle.com/datasets/joniarroba/noshowappointments)
